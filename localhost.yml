@@ -52,6 +52,8 @@
       - { name: dropbox }
       - { name: font-fontawesome }
       - { name: inkscape }
+      - { name: skim}
+      - { name: adobe-reader }
 
   tasks:
     - name: add repositories
