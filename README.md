@@ -41,7 +41,7 @@ $ xcode-select --install
 2. Clone repository to setup Mac with ansible
 
    ``` bash
-   $ git clone hogehoge.git ~/.provisioning
+   $ git clone https://github.com/yusekiya/mac_setup.git ~/.provisioning
    $ cd ~/.provisioning
    $ HOMEBREW_CASK_OPTS="--appdir=/Applications" ansible-playbook -i hosts -vv localhost.yml
    ```
