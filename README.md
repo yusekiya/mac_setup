@@ -62,7 +62,7 @@ $ xcode-select --install
 - Install [anaconda][2] under ~/opt/anaconda
 
   - Make sure that the following packages are installed:
-  
+
     - numpy
     - scipy
     - matplotlib
@@ -71,27 +71,30 @@ $ xcode-select --install
     - cython
     - numba
     - jedi
-  
+
   - Install the following packages through pip:
-  
+
     - grip
     - epc
 
   - Install numdifftools through conda
-  
+
     ``` bash
     $ conda install -c http://conda.anaconda.org/pbrod numdifftools
     ```
 
   - Apply [solarized theme][3] to iTerm2
-  
+
     Load solarized theme in `~/repos/solarized` through preferences setting in iTerm2
+
+  - Setup atom with `sync-settings`
+
+    Access token and Gist id is in my Dropbox
 
 ## TODO
 
 - [ ] Make sure that the above setting works
 - [ ] Automate the manual setting as much as possible
-- [ ] IME on emacs-mac doesn't work well
 
 
 [1]: http://brew.sh/
