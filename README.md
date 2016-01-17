@@ -83,13 +83,13 @@ $ xcode-select --install
     $ conda install -c http://conda.anaconda.org/pbrod numdifftools
     ```
 
-  - Apply [solarized theme][3] to iTerm2
+- Apply [solarized theme][3] to iTerm2
 
-    Load solarized theme in `~/repos/solarized` through preferences setting in iTerm2
+  Load solarized theme in `~/repos/solarized` through preferences setting in iTerm2
 
-  - Setup atom with `sync-settings`
+- Setup atom with `sync-settings`
 
-    Access token and Gist id is in my Dropbox
+  Access token and Gist id is in my Dropbox
 
 ## TODO
 
