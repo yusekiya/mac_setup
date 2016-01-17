@@ -49,7 +49,7 @@ $ xcode-select --install
 
 ## Manual additional settings
 
-- Install Ricty in my dropbox folder
+- Install Ricty in my dropbox folder with Font Book
 - Make symlinks to files in dropbox/home
 - Copy scripts in dropbox/my_script to ~/bin
 - Make ~/.gitconfig.local and describe git settings which is not made public
@@ -59,7 +59,7 @@ $ xcode-select --install
   $ chmod 755 ~/.git_template/hooks/*
   ```
 
-- Install [anaconda][2] under ~/opt/anaconda
+- Install [anaconda][2] under ~/anaconda
 
   - Make sure that the following packages are installed:
 
