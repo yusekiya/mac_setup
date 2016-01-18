@@ -54,6 +54,7 @@
       - { name: inkscape }
       - { name: skim}
       - { name: adobe-reader }
+      - { name: mendeley-desktop }
 
   tasks:
     - name: add repositories
