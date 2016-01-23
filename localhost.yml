@@ -15,6 +15,7 @@
       - railwaycat/emacsmacport
 
     homebrew_packages:
+      - { name: ansible}
       - { name: ag }
       - { name: aspell }
       - { name: autoconf }
