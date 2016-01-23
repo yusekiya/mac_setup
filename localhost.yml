@@ -45,6 +45,7 @@
       - { name: tree }
       - { name: vim, install_options: with-lua }
       - { name: emacs-mac, install_options: with-modern-icon }
+      - { name: nodebrew }
 
     homebrew_cask_packages:
       - { name: iterm2 }
