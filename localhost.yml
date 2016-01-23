@@ -107,6 +107,9 @@
     - name: download solarized colors for gnu ls
       git: repo=https://github.com/seebi/dircolors-solarized.git dest=~/repos/dircolors-solarized
 
+    - name: make directory for nodebrew
+      file: path="{{ lookup('env', 'HOME') }}/.nodebrew/src" state=directory
+
   handlers:
     - name: setup karabiner
       shell: sh karabiner-setup.sh chdir={{ inventory_dir }}
