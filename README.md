@@ -91,6 +91,21 @@ $ xcode-select --install
 
   Access token and Gist id is in my Dropbox
 
+- Setup karabiner
+
+  Launch karabiner.app, then
+
+  ```bash
+  $ sh .provisioning/karabiner-setup.sh
+  ```
+
+- Setup TeX
+
+  ```bash
+  sudo tlmgr update --self --all
+  ```
+
+
 ## TODO
 
 - [ ] Make sure that the above setting works

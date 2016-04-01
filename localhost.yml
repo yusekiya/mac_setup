@@ -83,11 +83,9 @@
 
     - name: install karabiner
       homebrew_cask: name=karabiner state=installed
-      notify: setup karabiner
 
     - name: install mactex
       homebrew_cask: name=mactex state=installed
-      notify: setup tex
 
     - name: install dotfiles
       git: repo={{ dotfiles.src.repository }} dest={{ dotfiles.dest }}
@@ -109,13 +107,4 @@
 
     - name: make directory for nodebrew
       file: path="{{ lookup('env', 'HOME') }}/.nodebrew/src" state=directory
-
-  handlers:
-    - name: setup karabiner
-      shell: sh karabiner-setup.sh chdir={{ inventory_dir }}
-      args:
-        removes: karabiner-setup.sh
-
-    - name: setup tex
-      shell: sudo tlmgr update --self --all
 
