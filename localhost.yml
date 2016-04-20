@@ -53,7 +53,6 @@
       - { name: atom }
       - { name: dropbox }
       - { name: font-fontawesome }
-      - { name: inkscape }
       - { name: skim}
       - { name: adobe-reader }
       - { name: mendeley-desktop }

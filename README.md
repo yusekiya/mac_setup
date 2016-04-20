@@ -105,6 +105,7 @@ $ xcode-select --install
   sudo tlmgr update --self --all
   ```
 
+- Install Inkscape from [here][4].
 
 ## TODO
 
@@ -115,3 +116,4 @@ $ xcode-select --install
 [1]: http://brew.sh/
 [2]: https://www.continuum.io/downloads
 [3]: https://github.com/altercation/solarized
+[4]: https://code.launchpad.net/~suv-lp/inkscape/osxmenu
