@@ -71,6 +71,7 @@ $ xcode-select --install
     - cython
     - numba
     - jedi
+    - numpydoc
 
   - Install the following packages through pip:
 
