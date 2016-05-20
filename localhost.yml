@@ -107,6 +107,12 @@
     - name: make directory for nodebrew
       file: path="{{ lookup('env', 'HOME') }}/.nodebrew/src" state=directory
 
+    - name: make brewland
+      file: path="{{ lookup('env', 'HOME') }}/.brewland" state=directory
+
+    - name: downlowd .envrc for brewland
+      get_url: url="https://gist.githubusercontent.com/yusekiya/c38cb5216084365273af117b99a42472/raw/dfb51ec9b2c4353eb1a81b223122e510f94d53d9/.envrc" dest="{{ lookup('env', 'HOME') }}/.brewland/.envrc"
+
     - name: link apps with homebrew
       command: brew linkapps
 
