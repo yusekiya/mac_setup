@@ -78,12 +78,18 @@
       with_items: "{{ homebrew_packages }}"
       register: ret_homebrew
 
+    - name: check updated homebrew package
+      set_fact: updated_homebrew_package={{ ret_homebrew.results | selectattr('changed') | map(attribute='item.name') | list }}
+
     - name: install homebrew cask packages
       homebrew_cask:
           name: "{{ item.name }}"
           state: "{{ item.state | default('installed') }}"
       with_items: "{{ homebrew_cask_packages }}"
       register: ret_homebrew_cask
+
+    - name: check updated homebrew cask package
+      set_fact: updated_homebrew_cask_package={{ ret_homebrew_cask.results | selectattr('changed') | map(attribute='item.name') | list }}
 
     - name: link apps with homebrew
       command: brew linkapps
