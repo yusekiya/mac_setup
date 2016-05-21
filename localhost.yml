@@ -30,6 +30,7 @@
       - { name: direnv }
       - { name: ffmpeg }
       - { name: findutils }
+      - { name: fzf }
       - { name: ghostscript }
       - { name: git }
       - { name: gnutls }
