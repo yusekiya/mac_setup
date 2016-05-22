@@ -93,6 +93,7 @@
 
     - name: link apps with homebrew
       command: brew linkapps
+      when: ret_homebrew_cask | changed
 
     - name: install dotfiles
       git:
