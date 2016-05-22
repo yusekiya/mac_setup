@@ -93,7 +93,7 @@
 
     - name: link apps with homebrew
       command: brew linkapps
-      when: ret_homebrew_cask | changed
+      when: (ret_homebrew | changed) or (ret_homebrew_cask | changed)
 
     - name: install dotfiles
       git:
@@ -107,7 +107,7 @@
       args:
           chdir: "{{ dotfiles.dest }}"
       when: ret_git_dotfiles | changed
-          
+
     - name: install fzf auto complete and key bindings
       shell: /usr/local/opt/fzf/install --key-bindings --completion --no-update-rc
       when: "{{ 'fzf' in updated_homebrew_package }}"
