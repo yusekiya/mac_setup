@@ -106,6 +106,10 @@
       args:
           chdir: "{{ dotfiles.dest }}"
       when: ret_git_dotfiles | changed
+          
+    - name: install fzf auto complete and key bindings
+      shell: /usr/local/opt/fzf/install --key-bindings --completion --no-update-rc
+      when: "{{ 'fzf' in updated_homebrew_package }}"
 
     - name: install tmux plugin manager
       git:
