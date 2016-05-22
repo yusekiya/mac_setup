@@ -115,16 +115,22 @@
       git:
           repo: "https://github.com/tmux-plugins/tpm.git"
           dest: "~/.tmux/plugins/tpm"
+      register: ret_git_tmux
+      changed_when: "ret_git_tmux.after|default('after') != ret_git_tmux.before|default('before')"
 
     - name: download solarized theme
       git:
           repo: "https://github.com/altercation/solarized.git"
           dest: "~/repos/solarized"
+      register: ret_git_solarized
+      changed_when: "ret_git_solarized.after|default('after') != ret_git_solarized.before|default('before')"
 
     - name: download solarized colors for gnu ls
       git:
           repo: "https://github.com/seebi/dircolors-solarized.git" 
           dest: "~/repos/dircolors-solarized"
+      register: ret_git_gnuls_color
+      changed_when: "ret_git_gnuls_color.after|default('after') != ret_git_gnuls_color.before|default('before')"
 
     - name: make directory for nodebrew
       file:
