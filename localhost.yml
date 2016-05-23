@@ -30,6 +30,7 @@
       - { name: ffmpeg }
       - { name: findutils }
       - { name: fzf }
+      - { name: gawk}
       - { name: ghostscript }
       - { name: git }
       - { name: gnutls }
@@ -132,6 +133,13 @@
           dest: "~/repos/dircolors-solarized"
       register: ret_git_gnuls_color
       changed_when: "ret_git_gnuls_color.after|default('after') != ret_git_gnuls_color.before|default('before')"
+
+    - name: install enhancd
+      git:
+          repo: "https://github.com/b4b4r07/enhancd"
+          dest: "~/repos/enhancd"
+      register: ret_git_enhancd
+      changed_when: "ret_git_enhancd.after|default('after') != ret_git_enhancd.before|default('before')"
 
     - name: make directory for nodebrew
       file:
