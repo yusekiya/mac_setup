@@ -6,7 +6,7 @@
       src:
         repository: "https://github.com/yusekiya/dotfiles.git"
       dest: "~/dotfiles"
-      symlink_script: "~/dotfiles/setup.sh -f"
+      symlink_script: "sh setup.sh -f"
 
     homebrew_taps:
       - caskroom/cask
@@ -103,7 +103,7 @@
       changed_when: "ret_git_dotfiles.after|default('after') != ret_git_dotfiles.before|default('before')"
 
     - name: symlink dotfiles
-      shell: sh "{{ dotfiles.symlink_script }}"
+      shell: "{{ dotfiles.symlink_script }}"
       args:
           chdir: "{{ dotfiles.dest }}"
       when: ret_git_dotfiles | changed
