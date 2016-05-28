@@ -34,6 +34,7 @@
       - { name: ghostscript }
       - { name: git }
       - { name: gnutls }
+      - { name: gnu-sed, install_options: with-default-names }
       - { name: imagemagick }
       - { name: nkf }
       - { name: lua }
