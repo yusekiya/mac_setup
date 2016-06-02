@@ -72,6 +72,7 @@ $ xcode-select --install
     - numba
     - jedi
     - numpydoc
+    - pylint
 
   - Install the following packages through pip:
 
