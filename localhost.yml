@@ -61,6 +61,28 @@
       - { name: karabiner}
       - { name: mactex}
 
+    basic_dirs:
+        - { path: "{{ lookup('env', 'HOME') }}/.nodebrew/src",
+            state: directory }
+        - { path: "{{ lookup('env', 'HOME') }}/.brewland",
+            state: directory }
+        - { path: "{{ lookup('env', 'HOME') }}/bin",
+            state: directory }
+        - { path: "{{ lookup('env', 'HOME') }}/scratch",
+            state: directory }
+        - { path: "{{ lookup('env', 'HOME') }}/share",
+            state: directory }
+        - { path: "{{ lookup('env', 'HOME') }}/Documents/AcademicConference",
+            state: directory }
+        - { path: "{{ lookup('env', 'HOME') }}/Documents/Fund",
+            state: directory }
+        - { path: "{{ lookup('env', 'HOME') }}/Documents/Seminar",
+            state: directory }
+        - { path: "{{ lookup('env', 'HOME') }}/Documents/Study",
+            state: directory }
+        - { path: "{{ lookup('env', 'HOME') }}/Documents/Misc",
+            state: directory }
+
     git_repos:
         - { name: tpm,
             repo: "https://github.com/tmux-plugins/tpm.git",
@@ -76,6 +98,12 @@
             dest: "~/repos/enhancd" }
 
   tasks:
+    - name: create basic directories
+      file:
+          path: "{{ item.path }}"
+          state: "{{ item.state }}"
+      with_items: "{{ basic_dirs }}"
+
     - name: add repositories for homebrew
       homebrew_tap:
           tap: "{{ item }}"
@@ -134,16 +162,6 @@
           dest: "{{ item.dest }}"
       with_items: "{{ git_repos }}"
       register: ret_git_clone
-
-    - name: make directory for nodebrew
-      file:
-          path: "{{ lookup('env', 'HOME') }}/.nodebrew/src"
-          state: directory
-
-    - name: make brewland
-      file:
-          path: "{{ lookup('env', 'HOME') }}/.brewland"
-          state: directory
 
     - name: downlowd .envrc for brewland
       get_url:
