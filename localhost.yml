@@ -76,7 +76,7 @@
             dest: "~/repos/enhancd" }
 
   tasks:
-    - name: add repositories
+    - name: add repositories for homebrew
       homebrew_tap:
           tap: "{{ item }}"
           state: present
