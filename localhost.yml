@@ -144,6 +144,7 @@
           repo: "{{ dotfiles.src.repository }}"
           dest: "{{ dotfiles.dest }}"
       register: ret_git_dotfiles
+      # Uncomment the following line if git module always returns state changed
       # changed_when: "ret_git_dotfiles.after|default('after') != ret_git_dotfiles.before|default('before')"
 
     - name: symlink dotfiles
