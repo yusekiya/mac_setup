@@ -82,6 +82,18 @@
             state: directory }
         - { path: "{{ lookup('env', 'HOME') }}/Documents/Misc",
             state: directory }
+        - { path: "{{ lookup('env', 'HOME') }}/usr/bin",
+            state: directory }
+        - { path: "{{ lookup('env', 'HOME') }}/usr/include",
+            state: directory }
+        - { path: "{{ lookup('env', 'HOME') }}/usr/lib",
+            state: directory }
+        - { path: "{{ lookup('env', 'HOME') }}/usr/lib/python3/site-packages",
+            state: directory }
+        - { path: "{{ lookup('env', 'HOME') }}/usr/share",
+            state: directory }
+        - { path: "{{ lookup('env', 'HOME') }}/usr/src",
+            state: directory }
 
     git_repos:
         - { name: tpm,
