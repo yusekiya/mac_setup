@@ -111,7 +111,7 @@ $ xcode-select --install
 
 ## TODO
 
-- [ ] Make sure that the above setting works
+- [x] Make sure that the above setting works
 - [ ] Automate the manual setting as much as possible
 
 
