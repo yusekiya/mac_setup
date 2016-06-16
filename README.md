@@ -85,9 +85,32 @@ $ xcode-select --install
     $ conda install -c http://conda.anaconda.org/pbrod numdifftools
     ```
 
-- Apply [solarized theme][3] to iTerm2
+- Setup iTerm2
 
-  Load solarized theme in `~/repos/solarized` through preferences setting in iTerm2
+  - Apply [solarized theme][3] to iTerm2
+
+    Load solarized theme in `~/repos/solarized` through preferences setting in iTerm2
+
+  - Add shortcut key
+
+    | Key Combination  | Action           |
+    |------------------|------------------|
+    | Ctrl-Tab         | Next Tab         |
+    | Ctrl-Shift-Tab   | Previous Tab     |
+
+
+  - Install shell integration (> ver3.0)
+
+    `iTerm2 > Install Shell Integration`
+
+  - Create profile for remote host
+
+    - Open profile setting with `iTerm2 > Preference > Profiles`.
+    - Create new profilw by duplicating Default profile with keyboard shortcut `command-=`.
+    - Change profile name to "Remote" in General tab.
+    - Change tab color in Colors tab.
+    - Add rule for automatic profile switching in Advanced tab.
+
 
 - Setup atom with `sync-settings`
 
