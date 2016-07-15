@@ -78,6 +78,7 @@ $ xcode-select --install
 
     - grip
     - epc
+    - pygments_style_solarized
 
   - Install numdifftools through conda
 
