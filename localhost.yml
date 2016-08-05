@@ -48,7 +48,7 @@
       - { name: tmux }
       - { name: tree }
       - { name: vim, install_options: with-lua }
-      - { name: emacs-mac, install_options: with-modern-icon }
+      - { name: emacs-mac, install_options: with-official-icon}
       - { name: nodebrew }
 
     homebrew_cask_packages:
