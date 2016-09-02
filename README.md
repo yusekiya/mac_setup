@@ -86,6 +86,24 @@ $ xcode-select --install
     $ conda install -c http://conda.anaconda.org/pbrod numdifftools
     ```
 
+- Setup environment for Node.js
+
+  - Install Node.js
+
+    ```bash
+    $ nodebrew install-binary latest
+    $ nodebrew use latest
+    ```
+
+    The `latest` can instead be a version of Node.js given through `nodebrew ls-remote`.
+
+  - Install the following packages globally with `npm install -g <package_name>`
+
+    - tern
+    - electron
+    - electron-packager
+
+
 - Setup iTerm2
 
   - Apply [solarized theme][3] to iTerm2
