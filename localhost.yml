@@ -56,7 +56,7 @@
       - { name: xquartz }
       - { name: atom }
       - { name: dropbox }
-      - { name: font-fontawesome }
+      # - { name: font-fontawesome }
       - { name: skim}
       - { name: mendeley-desktop }
       - { name: karabiner}
