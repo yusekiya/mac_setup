@@ -58,7 +58,6 @@
       - { name: dropbox }
       - { name: font-fontawesome }
       - { name: skim}
-      - { name: adobe-reader }
       - { name: mendeley-desktop }
       - { name: karabiner}
       - { name: mactex}
