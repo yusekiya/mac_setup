@@ -65,69 +65,69 @@
       - { name: mactex}
 
     basic_dirs:
-        - { path: "{{ lookup('env', 'HOME') }}/.nodebrew/src",
-            state: directory }
-        - { path: "{{ lookup('env', 'HOME') }}/.brewland",
-            state: directory }
-        - { path: "{{ lookup('env', 'HOME') }}/bin",
-            state: directory }
-        - { path: "{{ lookup('env', 'HOME') }}/scratch",
-            state: directory }
-        - { path: "{{ lookup('env', 'HOME') }}/share",
-            state: directory }
-        - { path: "{{ lookup('env', 'HOME') }}/Documents/AcademicConference",
-            state: directory }
-        - { path: "{{ lookup('env', 'HOME') }}/Documents/Fund",
-            state: directory }
-        - { path: "{{ lookup('env', 'HOME') }}/Documents/Seminar",
-            state: directory }
-        - { path: "{{ lookup('env', 'HOME') }}/Documents/Study",
-            state: directory }
-        - { path: "{{ lookup('env', 'HOME') }}/Documents/Misc",
-            state: directory }
-        - { path: "{{ lookup('env', 'HOME') }}/usr/bin",
-            state: directory }
-        - { path: "{{ lookup('env', 'HOME') }}/usr/include",
-            state: directory }
-        - { path: "{{ lookup('env', 'HOME') }}/usr/lib",
-            state: directory }
-        - { path: "{{ lookup('env', 'HOME') }}/usr/lib/python3/site-packages",
-            state: directory }
-        - { path: "{{ lookup('env', 'HOME') }}/usr/share",
-            state: directory }
-        - { path: "{{ lookup('env', 'HOME') }}/usr/src",
-            state: directory }
+      - { path: "{{ lookup('env', 'HOME') }}/.nodebrew/src",
+          state: directory }
+      - { path: "{{ lookup('env', 'HOME') }}/.brewland",
+          state: directory }
+      - { path: "{{ lookup('env', 'HOME') }}/bin",
+          state: directory }
+      - { path: "{{ lookup('env', 'HOME') }}/scratch",
+          state: directory }
+      - { path: "{{ lookup('env', 'HOME') }}/share",
+          state: directory }
+      - { path: "{{ lookup('env', 'HOME') }}/Documents/AcademicConference",
+          state: directory }
+      - { path: "{{ lookup('env', 'HOME') }}/Documents/Fund",
+          state: directory }
+      - { path: "{{ lookup('env', 'HOME') }}/Documents/Seminar",
+          state: directory }
+      - { path: "{{ lookup('env', 'HOME') }}/Documents/Study",
+          state: directory }
+      - { path: "{{ lookup('env', 'HOME') }}/Documents/Misc",
+          state: directory }
+      - { path: "{{ lookup('env', 'HOME') }}/usr/bin",
+          state: directory }
+      - { path: "{{ lookup('env', 'HOME') }}/usr/include",
+          state: directory }
+      - { path: "{{ lookup('env', 'HOME') }}/usr/lib",
+          state: directory }
+      - { path: "{{ lookup('env', 'HOME') }}/usr/lib/python3/site-packages",
+          state: directory }
+      - { path: "{{ lookup('env', 'HOME') }}/usr/share",
+          state: directory }
+      - { path: "{{ lookup('env', 'HOME') }}/usr/src",
+          state: directory }
 
     git_repos:
-        - { name: tpm,
-            repo: "https://github.com/tmux-plugins/tpm.git",
-            dest: "~/.tmux/plugins/tpm" }
-        - { name: solarized,
-            repo: "https://github.com/altercation/solarized.git",
-            dest: "~/repos/solarized" }
-        - { name: dircolors-solarized,
-            repo: "https://github.com/seebi/dircolors-solarized.git",
-            dest: "~/repos/dircolors-solarized" }
-        - { name: enhancd,
-            repo: "https://github.com/b4b4r07/enhancd.git",
-            dest: "~/repos/enhancd" }
+      - { name: tpm,
+          repo: "https://github.com/tmux-plugins/tpm.git",
+          dest: "~/.tmux/plugins/tpm" }
+      - { name: solarized,
+          repo: "https://github.com/altercation/solarized.git",
+          dest: "~/repos/solarized" }
+      - { name: dircolors-solarized,
+          repo: "https://github.com/seebi/dircolors-solarized.git",
+          dest: "~/repos/dircolors-solarized" }
+      - { name: enhancd,
+          repo: "https://github.com/b4b4r07/enhancd.git",
+          dest: "~/repos/enhancd" }
 
   tasks:
     - name: create basic directories
       file:
-          path: "{{ item.path }}"
-          state: "{{ item.state }}"
+        path: "{{ item.path }}"
+        state: "{{ item.state }}"
       with_items: "{{ basic_dirs }}"
 
     - name: add repositories for homebrew
       homebrew_tap:
-          tap: "{{ item }}"
-          state: present
+        tap: "{{ item }}"
+        state: present
       with_items: "{{ homebrew_taps }}"
 
     - name: update homebrew
       homebrew:
-          update_homebrew: yes
+        update_homebrew: yes
 
     - name: install homebrew packages
       homebrew:
@@ -142,8 +142,8 @@
 
     - name: install homebrew cask packages
       homebrew_cask:
-          name: "{{ item.name }}"
-          state: "{{ item.state | default('present') }}"
+        name: "{{ item.name }}"
+        state: "{{ item.state | default('present') }}"
       with_items: "{{ homebrew_cask_packages }}"
       register: ret_homebrew_cask
 
@@ -156,8 +156,8 @@
 
     - name: install dotfiles
       git:
-          repo: "{{ dotfiles.src.repository }}"
-          dest: "{{ dotfiles.dest }}"
+        repo: "{{ dotfiles.src.repository }}"
+        dest: "{{ dotfiles.dest }}"
       register: ret_git_dotfiles
       # Uncomment the following line if git module always returns state changed
       # changed_when: "ret_git_dotfiles.after|default('after') != ret_git_dotfiles.before|default('before')"
@@ -165,7 +165,7 @@
     - name: symlink dotfiles
       shell: "{{ dotfiles.symlink_script }}"
       args:
-          chdir: "{{ dotfiles.dest }}"
+        chdir: "{{ dotfiles.dest }}"
       when: ret_git_dotfiles | changed
 
     - name: install fzf auto complete and key bindings
@@ -174,25 +174,25 @@
 
     - name: clone git repositories
       git:
-          repo: "{{ item.repo }}"
-          dest: "{{ item.dest }}"
+        repo: "{{ item.repo }}"
+        dest: "{{ item.dest }}"
       with_items: "{{ git_repos }}"
       register: ret_git_clone
 
     - name: downlowd .envrc for brewland
       get_url:
-          url: "https://gist.githubusercontent.com/yusekiya/c38cb5216084365273af117b99a42472/raw/dfb51ec9b2c4353eb1a81b223122e510f94d53d9/.envrc"
-          dest: "{{ lookup('env', 'HOME') }}/.brewland/.envrc"
+        url: "https://gist.githubusercontent.com/yusekiya/c38cb5216084365273af117b99a42472/raw/dfb51ec9b2c4353eb1a81b223122e510f94d53d9/.envrc"
+        dest: "{{ lookup('env', 'HOME') }}/.brewland/.envrc"
 
     - name: Register bash 4+
       become: yes
       lineinfile:
-          dest: /etc/shells
-          insertafter: EOF
-          line: /usr/local/bin/bash
-          state: present
+        dest: /etc/shells
+        insertafter: EOF
+        line: /usr/local/bin/bash
+        state: present
       notify: Change login shell
 
   handlers:
-      - name: Change login shell
-        command: chsh -s /usr/local/bin/bash
+    - name: Change login shell
+      command: chsh -s /usr/local/bin/bash
