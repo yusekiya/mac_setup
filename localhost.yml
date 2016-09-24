@@ -12,6 +12,7 @@
       - caskroom/cask
       - caskroom/fonts
       - homebrew/dupes
+      - homebrew/versions
       - railwaycat/emacsmacport
 
     homebrew_packages:
@@ -23,7 +24,7 @@
       - { name: xz }
       - { name: binutils }
       - { name: bash}
-      - { name: bash-completion }
+      - { name: bash-completion2 }
       - { name: cmake }
       - { name: colordiff }
       - { name: coreutils }
