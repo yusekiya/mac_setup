@@ -22,6 +22,7 @@
       - { name: automake }
       - { name: xz }
       - { name: binutils }
+      - { name: bash}
       - { name: bash-completion }
       - { name: cmake }
       - { name: colordiff }
@@ -182,3 +183,15 @@
           url: "https://gist.githubusercontent.com/yusekiya/c38cb5216084365273af117b99a42472/raw/dfb51ec9b2c4353eb1a81b223122e510f94d53d9/.envrc"
           dest: "{{ lookup('env', 'HOME') }}/.brewland/.envrc"
 
+    - name: Register bash 4+
+      become: yes
+      lineinfile:
+          dest: /etc/shells
+          insertafter: EOF
+          line: /usr/local/bin/bash
+          state: present
+      notify: Change login shell
+
+  handlers:
+      - name: Change login shell
+        command: chsh -s /usr/local/bin/bash
