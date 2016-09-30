@@ -83,7 +83,7 @@
           state: directory }
       - { path: "{{ lookup('env', 'HOME') }}/Documents/Study",
           state: directory }
-      - { path: "{{ lookup('env', 'HOME') }}/Documents/Misc",
+      - { path: "{{ lookup('env', 'HOME') }}/Documents/Paperwork",
           state: directory }
       - { path: "{{ lookup('env', 'HOME') }}/usr/bin",
           state: directory }
