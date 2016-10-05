@@ -63,6 +63,7 @@
       - { name: mendeley-desktop }
       - { name: karabiner}
       - { name: mactex}
+      - { name: docker}
 
     basic_dirs:
       - { path: "{{ lookup('env', 'HOME') }}/.nodebrew/src",
