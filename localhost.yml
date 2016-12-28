@@ -64,6 +64,8 @@
       - { name: karabiner}
       - { name: mactex}
       - { name: docker}
+      - { name: virtualbox}
+      - { name: vagrant}
 
     basic_dirs:
       - { path: "{{ lookup('env', 'HOME') }}/.nodebrew/src",
