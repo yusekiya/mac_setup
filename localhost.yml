@@ -116,23 +116,23 @@
           dest: "~/repos/enhancd" }
 
   tasks:
-    - name: create basic directories
+    - name: Create basic directories
       file:
         path: "{{ item.path }}"
         state: "{{ item.state }}"
       with_items: "{{ basic_dirs }}"
 
-    - name: add repositories for homebrew
+    - name: Add repositories for homebrew
       homebrew_tap:
         tap: "{{ item }}"
         state: present
       with_items: "{{ homebrew_taps }}"
 
-    - name: update homebrew
+    - name: Update homebrew
       homebrew:
         update_homebrew: yes
 
-    - name: install homebrew packages
+    - name: Install homebrew packages
       homebrew:
         name: "{{ item.name }}"
         state: "{{ item.state | default('latest') }}"
@@ -140,24 +140,24 @@
       with_items: "{{ homebrew_packages }}"
       register: ret_homebrew
 
-    - name: check updated homebrew package
+    - name: Check updated homebrew package
       set_fact: updated_homebrew_package={{ ret_homebrew.results | selectattr('changed') | map(attribute='item.name') | list }}
 
-    - name: install homebrew cask packages
+    - name: Install homebrew cask packages
       homebrew_cask:
         name: "{{ item.name }}"
         state: "{{ item.state | default('present') }}"
       with_items: "{{ homebrew_cask_packages }}"
       register: ret_homebrew_cask
 
-    - name: check updated homebrew cask package
+    - name: Check updated homebrew cask package
       set_fact: updated_homebrew_cask_package={{ ret_homebrew_cask.results | selectattr('changed') | map(attribute='item.name') | list }}
 
-    - name: link apps with homebrew
+    - name: Link apps with homebrew
       command: brew linkapps
       when: (ret_homebrew | changed) or (ret_homebrew_cask | changed)
 
-    - name: install dotfiles
+    - name: Install dotfiles
       git:
         repo: "{{ dotfiles.src.repository }}"
         dest: "{{ dotfiles.dest }}"
@@ -165,24 +165,24 @@
       # Uncomment the following line if git module always returns state changed
       # changed_when: "ret_git_dotfiles.after|default('after') != ret_git_dotfiles.before|default('before')"
 
-    - name: symlink dotfiles
+    - name: Symlink dotfiles
       shell: "{{ dotfiles.symlink_script }}"
       args:
         chdir: "{{ dotfiles.dest }}"
       when: ret_git_dotfiles | changed
 
-    - name: install fzf auto complete and key bindings
+    - name: Install fzf auto complete and key bindings
       shell: /usr/local/opt/fzf/install --key-bindings --completion --no-update-rc
       when: "{{ 'fzf' in updated_homebrew_package }}"
 
-    - name: clone git repositories
+    - name: Clone git repositories
       git:
         repo: "{{ item.repo }}"
         dest: "{{ item.dest }}"
       with_items: "{{ git_repos }}"
       register: ret_git_clone
 
-    - name: downlowd .envrc for brewland
+    - name: Downlowd .envrc for brewland
       get_url:
         url: "https://gist.githubusercontent.com/yusekiya/c38cb5216084365273af117b99a42472/raw/dfb51ec9b2c4353eb1a81b223122e510f94d53d9/.envrc"
         dest: "{{ lookup('env', 'HOME') }}/.brewland/.envrc"
