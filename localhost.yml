@@ -157,6 +157,17 @@
       command: brew linkapps
       when: (ret_homebrew | changed) or (ret_homebrew_cask | changed)
 
+    - name: Install ripgrep with SIMD and all optimizations | Tap repo
+      homebrew_tap:
+        tap: burntsushi/ripgrep
+        url: 'https://github.com/BurntSushi/ripgrep.git'
+        state: present
+
+    - name: Install ripgrep with SIMD and all optimizations | Install ripgrep
+      homebrew:
+        name: burntsushi/ripgrep/ripgrep-bin
+        state: latest
+
     - name: Install dotfiles
       git:
         repo: "{{ dotfiles.src.repository }}"
