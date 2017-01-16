@@ -13,6 +13,7 @@
       - caskroom/fonts
       - homebrew/dupes
       - homebrew/versions
+      - homebrew/completions
       - railwaycat/emacsmacport
 
     homebrew_packages:
@@ -29,6 +30,9 @@
       - { name: colordiff }
       - { name: coreutils }
       - { name: ctags }
+      - { name: direnv }
+      - { name: docker-completion }
+      - { name: docker-compose-completion }
       - { name: direnv }
       - { name: ffmpeg }
       - { name: findutils }
