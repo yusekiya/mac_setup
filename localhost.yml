@@ -44,6 +44,7 @@
       - { name: gnu-sed, install_options: with-default-names }
       - { name: imagemagick }
       - { name: nkf }
+      - { name: llvm }
       - { name: lua }
       - { name: pandoc }
       - { name: peco }
