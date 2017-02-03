@@ -187,6 +187,21 @@
         chdir: "{{ dotfiles.dest }}"
       when: ret_git_dotfiles | changed
 
+    - name: Install my utils | Clone
+      git:
+        repo: "https://github.com/yusekiya/my_utils.git"
+        dest: "~/repos/my_utils"
+      register: ret_my_utils
+
+    - name: Install my utils | Install
+      file:
+        state: link
+        src: "{{ item }}"
+        dest: "~/bin/{{ item | basename }}"
+      with_fileglob:
+        - "~/repos/my_utils/*"
+      when: ret_my_utils | changed
+
     - name: Install fzf auto complete and key bindings
       shell: /usr/local/opt/fzf/install --key-bindings --completion --no-update-rc
       when: "{{ 'fzf' in updated_homebrew_package }}"
