@@ -193,6 +193,16 @@
         dest: "~/repos/my_utils"
       register: ret_my_utils
 
+    - stat:
+        path: "~/.git_manage"
+      register: stat_git_manage
+
+    - name: Install my utils | Create database file
+      file:
+        state: touch
+        dest: "~/.git_manage"
+      when: not stat_git_manage.stat.exists
+
     - name: Install my utils | Install
       file:
         state: link
