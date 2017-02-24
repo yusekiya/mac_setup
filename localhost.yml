@@ -200,7 +200,7 @@
         path: "~/.git_manage"
       register: stat_git_manage
 
-    - name: Install my utils | Create database file
+    - name: Install my utils | Create database file for git manage command
       file:
         state: touch
         dest: "~/.git_manage"
