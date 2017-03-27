@@ -106,9 +106,15 @@ $ xcode-select --install
 
 - Setup iTerm2
 
-  - Apply [solarized theme][3] to iTerm2
+  - Apply iTerm2 theme
 
-    Load solarized theme in `~/repos/solarized` through preferences setting in iTerm2
+    - [solarized theme][3]
+
+      Load solarized theme in `~/repos/solarized` through preferences setting in iTerm2
+
+    - [Nord theme][5] 
+
+      See README in the repository.
 
   - Add shortcut key
 
@@ -161,3 +167,4 @@ $ xcode-select --install
 [2]: https://www.continuum.io/downloads
 [3]: https://github.com/altercation/solarized
 [4]: https://code.launchpad.net/~suv-lp/inkscape/osxmenu
+[5]: https://github.com/arcticicestudio/nord-iterm2
