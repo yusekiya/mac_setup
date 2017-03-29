@@ -229,6 +229,19 @@
       with_items: "{{ git_repos }}"
       register: ret_git_clone
 
+    - name: Install Nord dircolors | git clone repo
+      git:
+        repo: "https://github.com/arcticicestudio/nord-dircolors.git"
+        dest: "~/repos/nord-dircolors"
+      register: ret_nord_dircolors_clone
+
+    - name: Install Nord dircolors | make symlink
+      file:
+        state: link
+        src: "~/repos/nord-dircolors/src/dir_colors"
+        dest: "~/.dircolors"
+      when: ret_nord_dircolors_clone | changed
+
     - name: Downlowd .envrc for brewland
       get_url:
         url: "https://gist.githubusercontent.com/yusekiya/c38cb5216084365273af117b99a42472/raw/dfb51ec9b2c4353eb1a81b223122e510f94d53d9/.envrc"
