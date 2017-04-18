@@ -29,6 +29,7 @@
       - { name: cmake }
       - { name: colordiff }
       - { name: coreutils }
+      - { name: cppformat }
       - { name: ctags }
       - { name: direnv }
       - { name: docker-completion }
