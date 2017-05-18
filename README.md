@@ -86,6 +86,12 @@ $ xcode-select --install
     $ conda install -c http://conda.anaconda.org/pbrod numdifftools
     ```
 
+  - Install nbstripout through conda
+
+    ``` bash
+    $ conda install -c conda-forge nbstripout
+    ```
+
 - Setup environment for Node.js
 
   - Install Node.js
