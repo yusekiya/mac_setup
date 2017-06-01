@@ -126,6 +126,9 @@
       - { name: project_base_jupyter_postgres,
           repo: "https://github.com/yusekiya/project_base_jupyter_postgres.git",
           dest: "~/repos/project_base_jupyter_postgres" }
+      - { name: project_base_jupyter,
+          repo: "https://github.com/yusekiya/project_base_jupyter.git",
+          dest: "~/repos/project_base_jupyter" }
 
   tasks:
     - name: Create basic directories
