@@ -51,14 +51,6 @@ $ xcode-select --install
 
 - Install Ricty in my dropbox folder with Font Book
 - Make symlinks to files in dropbox/home
-- Copy scripts in dropbox/my_script to ~/bin
-- Make ~/.gitconfig.local and describe git settings which is not made public
-- Modify permissions of git hooks under ~/.git_template/hooks, if necessary
-
-  ``` bash
-  $ chmod 755 ~/.git_template/hooks/*
-  ```
-
 - Install [anaconda][2] under ~/anaconda
 
   - Make sure that the following packages are installed:
@@ -78,7 +70,6 @@ $ xcode-select --install
 
     - grip
     - epc
-    - pygments_style_solarized
 
   - Install numdifftools through conda
 
@@ -147,13 +138,13 @@ $ xcode-select --install
 
   Access token and Gist id is in my Dropbox
 
-- Setup karabiner
+<!-- - Setup karabiner -->
 
-  Launch karabiner.app, then
+  <!-- Launch karabiner.app, then -->
 
-  ```bash
-  $ sh .provisioning/karabiner-setup.sh
-  ```
+  <!-- ```bash -->
+  <!-- $ sh .provisioning/karabiner-setup.sh -->
+  <!-- ``` -->
 
 - Setup TeX
 
