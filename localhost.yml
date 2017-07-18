@@ -68,7 +68,7 @@
       - { name: skim}
       - { name: mendeley-desktop }
       # - { name: karabiner}
-      - { name: mactex}
+      # - { name: mactex}
       - { name: docker}
       - { name: virtualbox}
       - { name: vagrant}
