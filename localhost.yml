@@ -85,13 +85,13 @@
           state: directory }
       - { path: "{{ lookup('env', 'HOME') }}/share",
           state: directory }
+      - { path: "{{ lookup('env', 'HOME') }}/Study",
+          state: directory }
       - { path: "{{ lookup('env', 'HOME') }}/Documents/AcademicConference",
           state: directory }
       - { path: "{{ lookup('env', 'HOME') }}/Documents/Fund",
           state: directory }
       - { path: "{{ lookup('env', 'HOME') }}/Documents/Seminar",
-          state: directory }
-      - { path: "{{ lookup('env', 'HOME') }}/Documents/Study",
           state: directory }
       - { path: "{{ lookup('env', 'HOME') }}/Documents/Paperwork",
           state: directory }
