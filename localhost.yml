@@ -68,7 +68,6 @@
       - { name: font-fontawesome }
       - { name: skim}
       - { name: mendeley-desktop }
-      # - { name: karabiner}
       # - { name: mactex}
       - { name: docker}
       - { name: virtualbox}
