@@ -78,11 +78,7 @@
           state: directory }
       - { path: "{{ lookup('env', 'HOME') }}/.brewland",
           state: directory }
-      - { path: "{{ lookup('env', 'HOME') }}/bin",
-          state: directory }
       - { path: "{{ lookup('env', 'HOME') }}/scratch",
-          state: directory }
-      - { path: "{{ lookup('env', 'HOME') }}/share",
           state: directory }
       - { path: "{{ lookup('env', 'HOME') }}/Study",
           state: directory }
@@ -94,17 +90,17 @@
           state: directory }
       - { path: "{{ lookup('env', 'HOME') }}/Documents/Paperwork",
           state: directory }
-      - { path: "{{ lookup('env', 'HOME') }}/usr/bin",
+      - { path: "{{ lookup('env', 'HOME') }}/.local/bin",
           state: directory }
-      - { path: "{{ lookup('env', 'HOME') }}/usr/include",
+      - { path: "{{ lookup('env', 'HOME') }}/.local/include",
           state: directory }
-      - { path: "{{ lookup('env', 'HOME') }}/usr/lib",
+      - { path: "{{ lookup('env', 'HOME') }}/.local/lib",
           state: directory }
-      - { path: "{{ lookup('env', 'HOME') }}/usr/lib/python3/site-packages",
+      - { path: "{{ lookup('env', 'HOME') }}/.local/lib/python3/site-packages",
           state: directory }
-      - { path: "{{ lookup('env', 'HOME') }}/usr/share",
+      - { path: "{{ lookup('env', 'HOME') }}/.local/share",
           state: directory }
-      - { path: "{{ lookup('env', 'HOME') }}/usr/src",
+      - { path: "{{ lookup('env', 'HOME') }}/.local/src",
           state: directory }
 
     git_repos:
@@ -211,7 +207,7 @@
       file:
         state: link
         src: "{{ item }}"
-        dest: "~/bin/{{ item | basename }}"
+        dest: "~/.local/bin/{{ item | basename }}"
       with_fileglob:
         - "~/repos/my_utils/*"
       when: ret_my_utils | changed
