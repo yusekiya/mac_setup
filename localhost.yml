@@ -181,7 +181,7 @@
       shell: "{{ dotfiles.symlink_script }}"
       args:
         chdir: "{{ dotfiles.dest }}"
-      when: ret_git_dotfiles | changed
+      when: ret_git_dotfiles is changed
 
     - name: Install my utils | Clone
       git:
@@ -206,7 +206,7 @@
         dest: "~/.local/bin/{{ item | basename }}"
       with_fileglob:
         - "~/repos/my_utils/*"
-      when: ret_my_utils | changed
+      when: ret_my_utils is changed
 
     - name: Install fzf auto complete and key bindings
       shell: /usr/local/opt/fzf/install --key-bindings --completion --no-update-rc
@@ -230,7 +230,7 @@
         state: link
         src: "~/repos/nord-dircolors/src/dir_colors"
         dest: "~/.dircolors"
-      when: ret_nord_dircolors_clone | changed
+      when: ret_nord_dircolors_clone is changed
 
     - name: Downlowd .envrc for brewland
       get_url:
