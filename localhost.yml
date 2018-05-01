@@ -11,9 +11,6 @@
     homebrew_taps:
       - caskroom/cask
       - caskroom/fonts
-      - homebrew/dupes
-      - homebrew/versions
-      - homebrew/completions
       - railwaycat/emacsmacport
 
     homebrew_packages:
@@ -71,8 +68,6 @@
       - { name: mendeley-desktop }
       # - { name: mactex}
       - { name: docker}
-      - { name: virtualbox}
-      - { name: vagrant}
 
     basic_dirs:
       - { path: "{{ lookup('env', 'HOME') }}/.nodebrew/src",
