@@ -9,8 +9,8 @@
       symlink_script: "sh setup.sh -f"
 
     homebrew_taps:
-      - caskroom/cask
-      - caskroom/fonts
+      - homebrew/cask
+      - homebrew/cask-fonts
       - railwaycat/emacsmacport
 
     homebrew_packages:
