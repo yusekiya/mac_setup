@@ -65,6 +65,7 @@
       - { name: atom }
       - { name: dropbox }
       - { name: font-fontawesome }
+      - { name: font-freesans }
       - { name: skim}
       - { name: mendeley-desktop }
       # - { name: mactex}
