@@ -83,6 +83,13 @@ $ xcode-select --install
     $ conda install -c conda-forge nbstripout
     ```
 
+- Setup environment for Jupyterlab
+    
+    ```bash
+    $ conda install conda-forge::nodejs=9.9.* conda-forge::ipywidgets=7.2.* conda-forge::jupyterlab=0.32.*
+    $ jupyter labextension install @jupyter-widgets/jupyterlab-manager jupyterlab_bokeh
+    ```
+
 - Setup environment for Node.js
 
   - Install Node.js
@@ -109,7 +116,7 @@ $ xcode-select --install
 
       Load solarized theme in `~/repos/solarized` through preferences setting in iTerm2
 
-    - [Nord theme][5] 
+    - [Nord theme][5]
 
       See README in the repository.
 
