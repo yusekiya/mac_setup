@@ -53,6 +53,7 @@
       - { name: rsync }
       - { name: ssh-copy-id }
       - { name: tig }
+      - { name: tldr }
       - { name: tmux }
       - { name: tree }
       - { name: vim, install_options: with-lua }
