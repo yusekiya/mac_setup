@@ -53,97 +53,105 @@ $ xcode-select --install
 - Make symlinks to files in dropbox/home
 - Install [anaconda][2] under ~/anaconda
 
-  - Make sure that the following packages are installed:
+    - Make sure that the following packages are installed:
 
-    - numpy
-    - scipy
-    - matplotlib
-    - pandas
-    - sympy
-    - cython
-    - numba
-    - jedi
-    - numpydoc
-    - pylint
+        - numpy
+        - scipy
+        - matplotlib
+        - pandas
+        - sympy
+        - cython
+        - numba
+        - jedi
+        - numpydoc
+        - pylint
 
-  - Install the following packages through pip:
+    - Install the following packages through pip:
 
-    - grip
-    - epc
+        - grip
+        - epc
 
-  - Install numdifftools through conda
+    - Install numdifftools through conda
 
-    ``` bash
-    $ conda install -c http://conda.anaconda.org/pbrod numdifftools
-    ```
+      ``` bash
+      $ conda install -c http://conda.anaconda.org/pbrod numdifftools
+      ```
 
-  - Install nbstripout through conda
+    - Install nbstripout through conda
 
-    ``` bash
-    $ conda install -c conda-forge nbstripout
-    ```
+      ``` bash
+      $ conda install -c conda-forge nbstripout
+      ```
 
 - Setup environment for Jupyterlab
-    
-    ```bash
-    $ conda install conda-forge::nodejs=9.9.* conda-forge::ipywidgets=7.2.* conda-forge::jupyterlab=0.32.*
-    $ jupyter labextension install @jupyter-widgets/jupyterlab-manager jupyterlab_bokeh
-    ```
+
+  ```bash
+  $ conda install conda-forge::nodejs=9.9.* conda-forge::ipywidgets=7.2.* conda-forge::jupyterlab=0.32.*
+  $ jupyter labextension install @jupyter-widgets/jupyterlab-manager jupyterlab_bokeh
+  ```
 
 - Setup environment for Node.js
 
-  - Install Node.js
+    - Install Node.js
 
-    ```bash
-    $ nodebrew install-binary latest
-    $ nodebrew use latest
-    ```
+      ```bash
+      $ nodebrew install-binary latest
+      $ nodebrew use latest
+      ```
 
-    The `latest` can instead be a version of Node.js given through `nodebrew ls-remote`.
+      The `latest` can instead be a version of Node.js given through `nodebrew ls-remote`.
 
-  - Install the following packages globally with `npm install -g <package_name>`
+    - Install the following packages globally with `npm install -g <package_name>`
 
-    - tern
-    - electron
-    - electron-packager
+        - tern
+        - electron
+        - electron-packager
 
 
 - Setup iTerm2
 
-  - Apply iTerm2 theme
+    - Apply iTerm2 theme
 
-    - [solarized theme][3]
+        - [solarized theme][3]
 
-      Load solarized theme in `~/repos/solarized` through preferences setting in iTerm2
+          Load solarized theme in `~/repos/solarized` through preferences setting in iTerm2
 
-    - [Nord theme][5]
+        - [Nord theme][5]
 
-      See README in the repository.
+          See README in the repository.
 
-  - Add shortcut key
+    - Add shortcut key
 
-    | Key Combination  | Action           |
-    |------------------|------------------|
-    | Ctrl-Tab         | Next Tab         |
-    | Ctrl-Shift-Tab   | Previous Tab     |
+      | Key Combination  | Action           |
+      |------------------|------------------|
+      | Ctrl-Tab         | Next Tab         |
+      | Ctrl-Shift-Tab   | Previous Tab     |
 
 
-  - Install shell integration (> ver3.0)
+    - Install shell integration (> ver3.0)
 
-    `iTerm2 > Install Shell Integration`
+      `iTerm2 > Install Shell Integration`
 
-  - Create profile for remote host
+    - Create profile for remote host
 
-    - Open profile setting with `iTerm2 > Preference > Profiles`.
-    - Create new profilw by duplicating Default profile with keyboard shortcut `command-=`.
-    - Change profile name to "Remote" in General tab.
-    - Change tab color in Colors tab.
-    - Add rule for automatic profile switching in Advanced tab.
+        - Open profile setting with `iTerm2 > Preference > Profiles`.
+        - Create new profilw by duplicating Default profile with keyboard shortcut `command-=`.
+        - Change profile name to "Remote" in General tab.
+        - Change tab color in Colors tab.
+        - Add rule for automatic profile switching in Advanced tab.
 
 
 - Setup atom with `sync-settings`
 
   Access token and Gist id is in my Dropbox
+
+- Install vscode
+
+    - Install `Settings Sync`
+
+      Access token and Gist id is in my Dropbox
+
+    - Ran the `Shell Command: Install 'code' command in PATH`
 
 - Setup TeX
 
