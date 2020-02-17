@@ -59,6 +59,7 @@
       - { name: vim, install_options: with-lua }
       - { name: emacs-mac, install_options: with-official-icon}
       - { name: nodebrew }
+      - { name: zsh}
 
     homebrew_cask_packages:
       - { name: iterm2 }
@@ -242,15 +243,15 @@
         url: "https://gist.githubusercontent.com/yusekiya/c38cb5216084365273af117b99a42472/raw/dfb51ec9b2c4353eb1a81b223122e510f94d53d9/.envrc"
         dest: "{{ lookup('env', 'HOME') }}/.brewland/.envrc"
 
-    - name: Register bash 4+
+    - name: Register zsh
       become: yes
       lineinfile:
         dest: /etc/shells
         insertafter: EOF
-        line: /usr/local/bin/bash
+        line: /usr/local/bin/zsh
         state: present
       notify: Change login shell
 
   handlers:
     - name: Change login shell
-      command: chsh -s /usr/local/bin/bash
+      command: chsh -s /usr/local/bin/zsh
