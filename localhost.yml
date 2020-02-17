@@ -9,12 +9,11 @@
       symlink_script: "sh setup.sh -f"
 
     homebrew_taps:
-      - homebrew/cask
       - homebrew/cask-fonts
       - railwaycat/emacsmacport
 
     homebrew_packages:
-      - { name: ansible}
+      - { name: ansible }
       - { name: ag }
       - { name: aspell }
       - { name: autoconf }
@@ -64,13 +63,11 @@
     homebrew_cask_packages:
       - { name: iterm2 }
       - { name: xquartz }
-      - { name: atom }
       - { name: dropbox }
       - { name: font-fontawesome }
       - { name: font-freesans }
       - { name: skim}
       - { name: mendeley-desktop }
-      # - { name: mactex}
       - { name: docker}
 
     basic_dirs:
