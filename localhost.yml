@@ -61,14 +61,8 @@
       - { name: zsh}
 
     homebrew_cask_packages:
-      - { name: iterm2 }
-      - { name: xquartz }
-      - { name: dropbox }
       - { name: font-fontawesome }
       - { name: font-freesans }
-      - { name: skim}
-      - { name: mendeley-desktop }
-      - { name: docker}
 
     basic_dirs:
       - { path: "{{ lookup('env', 'HOME') }}/.nodebrew/src",
