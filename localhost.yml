@@ -40,7 +40,7 @@
       - { name: git }
       - { name: gitup}
       - { name: gnutls }
-      - { name: gnu-sed, install_options: with-default-names }
+      - { name: gnu-sed }
       - { name: imagemagick }
       - { name: nkf }
       - { name: librsvg }
@@ -55,8 +55,8 @@
       - { name: tldr }
       - { name: tmux }
       - { name: tree }
-      - { name: vim, install_options: with-lua }
-      - { name: emacs-mac, install_options: with-official-icon}
+      - { name: vim }
+      - { name: emacs-mac }
       - { name: nodebrew }
       - { name: zsh}
 
@@ -138,7 +138,6 @@
       homebrew:
         name: "{{ item.name }}"
         state: "{{ item.state | default('latest') }}"
-        install_options: "{{ item.install_options | default(omit) }}"
       with_items: "{{ homebrew_packages }}"
       register: ret_homebrew
 
