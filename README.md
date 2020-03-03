@@ -16,7 +16,7 @@ $ xcode-select --install
 
 ## Install Homebrew
 
-[Homebrew][1] is a package manager for Mac.
+[Homebrew][homebrew] is a package manager for Mac.
 
 1. Install Homebrew with
 
@@ -49,74 +49,11 @@ $ xcode-select --install
 
 ## Manual additional settings
 
-- Install Ricty in my dropbox folder with Font Book
-- Make symlinks to files in dropbox/home
-- Install [anaconda][2] under ~/anaconda
-
-    - Make sure that the following packages are installed:
-
-        - numpy
-        - scipy
-        - matplotlib
-        - pandas
-        - sympy
-        - cython
-        - numba
-        - jedi
-        - numpydoc
-        - pylint
-
-    - Install the following packages through pip:
-
-        - grip
-        - epc
-
-    - Install numdifftools through conda
-
-      ``` bash
-      $ conda install -c http://conda.anaconda.org/pbrod numdifftools
-      ```
-
-    - Install nbstripout through conda
-
-      ``` bash
-      $ conda install -c conda-forge nbstripout
-      ```
-
-- Setup environment for Jupyterlab
-
-  ```bash
-  $ conda install conda-forge::nodejs=9.9.* conda-forge::ipywidgets=7.2.* conda-forge::jupyterlab=0.32.*
-  $ jupyter labextension install @jupyter-widgets/jupyterlab-manager jupyterlab_bokeh
-  ```
-
-- Setup environment for Node.js
-
-    - Install Node.js
-
-      ```bash
-      $ nodebrew install-binary latest
-      $ nodebrew use latest
-      ```
-
-      The `latest` can instead be a version of Node.js given through `nodebrew ls-remote`.
-
-    - Install the following packages globally with `npm install -g <package_name>`
-
-        - tern
-        - electron
-        - electron-packager
-
-
 - Setup iTerm2
 
     - Apply iTerm2 theme
 
-        - [solarized theme][3]
-
-          Load solarized theme in `~/repos/solarized` through preferences setting in iTerm2
-
-        - [Nord theme][5]
+        - [Nord theme][nord]
 
           See README in the repository.
 
@@ -141,10 +78,6 @@ $ xcode-select --install
         - Add rule for automatic profile switching in Advanced tab.
 
 
-- Setup atom with `sync-settings`
-
-  Access token and Gist id is in my Dropbox
-
 - Install vscode
 
     - Install `Settings Sync`
@@ -153,22 +86,7 @@ $ xcode-select --install
 
     - Ran the `Shell Command: Install 'code' command in PATH`
 
-- Setup TeX
-
-  ```bash
-  sudo tlmgr update --self --all
-  ```
-
-- Install Inkscape from [here][4].
-
-## TODO
-
-- [x] Make sure that the above setting works
-- [ ] Automate the manual setting as much as possible
 
 
-[1]: http://brew.sh/
-[2]: https://www.continuum.io/downloads
-[3]: https://github.com/altercation/solarized
-[4]: https://github.com/caskformula/homebrew-caskformula
-[5]: https://github.com/arcticicestudio/nord-iterm2
+[homebrew]: http://brew.sh/
+[nord]: https://github.com/arcticicestudio/nord-iterm2
