@@ -21,7 +21,7 @@ $ xcode-select --install
 1. Install Homebrew with
 
    ``` bash
-   $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+   $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
    ```
 
 2. Check any issues with the install
