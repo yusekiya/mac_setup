@@ -107,9 +107,9 @@
       - { name: dircolors-solarized,
           repo: "https://github.com/seebi/dircolors-solarized.git",
           dest: "~/repos/dircolors-solarized" }
-      - { name: enhancd,
-          repo: "https://github.com/b4b4r07/enhancd.git",
-          dest: "~/repos/enhancd" }
+      # - { name: enhancd,
+          # repo: "https://github.com/b4b4r07/enhancd.git",
+          # dest: "~/repos/enhancd" }
 
   tasks:
 
