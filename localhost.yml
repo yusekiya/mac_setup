@@ -171,9 +171,9 @@
 
     - name: Install my utils | Clone
       git:
-        repo: "https://github.com/yusekiya/my_utils.git"
-        dest: "~/repos/my_utils"
-      register: ret_my_utils
+        repo: "https://github.com/yusekiya/toolbox.git"
+        dest: "~/repos/toolbox"
+      register: ret_toolbox
 
     - stat:
         path: "~/.git_manage"
@@ -191,8 +191,8 @@
         src: "{{ item }}"
         dest: "~/.local/bin/{{ item | basename }}"
       with_fileglob:
-        - "~/repos/my_utils/*"
-      when: ret_my_utils is changed
+        - "~/repos/toolbox/*"
+      when: ret_toolbox is changed
 
     - name: Install fzf auto complete and key bindings
       shell: /usr/local/opt/fzf/install --key-bindings --completion --no-update-rc
