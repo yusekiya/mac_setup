@@ -32,6 +32,7 @@
       - { name: docker-compose-completion }
       - { name: direnv }
       - { name: editorconfig }
+      - { name: fd }
       - { name: ffmpeg }
       - { name: findutils }
       - { name: fzf }
