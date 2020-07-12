@@ -170,7 +170,7 @@
         chdir: "{{ dotfiles.dest }}"
       when: ret_git_dotfiles is changed
 
-    - name: Install my utils | Clone
+    - name: Install my toolbox | Clone
       git:
         repo: "https://github.com/yusekiya/toolbox.git"
         dest: "~/repos/toolbox"
@@ -180,13 +180,13 @@
         path: "~/.git_manage"
       register: stat_git_manage
 
-    - name: Install my utils | Create database file for git manage command
+    - name: Install my toolbox | Create database file for git manage command
       file:
         state: touch
         dest: "~/.git_manage"
       when: not stat_git_manage.stat.exists
 
-    - name: Install my utils | Install
+    - name: Install my toolbox | Install
       file:
         state: link
         src: "{{ item }}"
