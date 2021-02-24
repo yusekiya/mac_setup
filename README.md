@@ -80,9 +80,9 @@ $ xcode-select --install
 
 - Install vscode
 
-    - Install `Settings Sync`
+    - Enable builtin `Settings Sync`
 
-      Access token and Gist id is in my Dropbox
+      Sign in with GitHub account
 
     - Run the `Shell Command: Install 'code' command in PATH`
 
