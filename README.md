@@ -84,7 +84,7 @@ $ xcode-select --install
 
       Access token and Gist id is in my Dropbox
 
-    - Ran the `Shell Command: Install 'code' command in PATH`
+    - Run the `Shell Command: Install 'code' command in PATH`
 
 
 
