@@ -1,6 +1,6 @@
 # Setup of Mac
 
-## Install Xcode
+## (Optional) Install Xcode
 
 Install Xcode from app store.
 An apple ID is necessary to download Xcode.
