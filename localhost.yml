@@ -175,10 +175,6 @@
         - "~/repos/toolbox/*"
       when: ret_toolbox is changed
 
-    - name: Install fzf auto complete and key bindings
-      shell: /usr/local/opt/fzf/install --key-bindings --completion --no-update-rc
-      when: "'fzf' in updated_homebrew_package"
-
     - name: Clone git repositories
       git:
         repo: "{{ item.repo }}"
