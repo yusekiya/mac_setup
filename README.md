@@ -52,7 +52,7 @@ $ xcode-select --install
 ### Setup fzf
 
 ```shell
-$ (brew --prefix)/opt/fzf/install --key-bindings --completion --no-update-rc
+$ $(brew --prefix)/opt/fzf/install --key-bindings --completion --no-update-rc
 ```
 
 ### Setup iTerm2
