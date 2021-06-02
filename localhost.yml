@@ -1,6 +1,6 @@
 - hosts: localhost
   connection: local
-  gather_facts: no
+  gather_facts: yes
   vars:
     dotfiles:
       src:
@@ -200,15 +200,29 @@
         url: "https://gist.githubusercontent.com/yusekiya/c38cb5216084365273af117b99a42472/raw/dfb51ec9b2c4353eb1a81b223122e510f94d53d9/.envrc"
         dest: "{{ lookup('env', 'HOME') }}/.brewland/.envrc"
 
-    - name: Register zsh
+    - name: Register zsh | x86_64
       become: yes
       lineinfile:
         dest: /etc/shells
         insertafter: EOF
         line: /usr/local/bin/zsh
         state: present
-      notify: Change login shell
+      notify: Change login shell | x86_64
+      when: "{{ ansible_facts['architecture'] }}" == "x86_64"
+
+    - name: Register zsh | arm64
+      become: yes
+      lineinfile:
+        dest: /etc/shells
+        insertafter: EOF
+        line: /opt/homebrew/bin/zsh
+        state: present
+      notify: Change login shell | arm64
+      when: "{{ ansible_facts['architecture'] }}" == "arm64"
 
   handlers:
-    - name: Change login shell
+    - name: Change login shell | x86_64
       command: chsh -s /usr/local/bin/zsh
+
+    - name: Change login shell | arm64
+      command: chsh -s /opt/homebrew/bin/zsh
