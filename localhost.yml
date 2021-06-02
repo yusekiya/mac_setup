@@ -32,6 +32,8 @@
       - { name: docker-compose-completion }
       - { name: direnv }
       - { name: editorconfig }
+      - { name: font-fontawesome }
+      - { name: font-freefont }
       - { name: fd }
       - { name: ffmpeg }
       - { name: findutils }
@@ -61,10 +63,6 @@
       - { name: emacs-mac }
       - { name: nodebrew }
       - { name: zsh}
-
-    homebrew_cask_packages:
-      - { name: font-fontawesome }
-      - { name: font-freesans }
 
     basic_dirs:
       - { path: "{{ lookup('env', 'HOME') }}/.nodebrew/src",
@@ -137,16 +135,6 @@
 
     - name: Check updated homebrew package
       set_fact: updated_homebrew_package={{ ret_homebrew.results | selectattr('changed') | map(attribute='item.name') | list }}
-
-    - name: Install homebrew cask packages
-      homebrew_cask:
-        name: "{{ item.name }}"
-        state: "{{ item.state | default('present') }}"
-      with_items: "{{ homebrew_cask_packages }}"
-      register: ret_homebrew_cask
-
-    - name: Check updated homebrew cask package
-      set_fact: updated_homebrew_cask_package={{ ret_homebrew_cask.results | selectattr('changed') | map(attribute='item.name') | list }}
 
     - name: Install dotfiles
       git:
