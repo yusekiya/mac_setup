@@ -49,42 +49,48 @@ $ xcode-select --install
 
 ## Manual additional settings
 
-- Setup iTerm2
+### Setup fzf
 
-    - Apply iTerm2 theme
+```shell
+$ (brew --prefix)/opt/fzf/install --key-bindings --completion --no-update-rc
+```
 
-        - [Nord theme][nord]
+### Setup iTerm2
 
-          See README in the repository.
+- Apply iTerm2 theme
 
-    - Add shortcut key
+    - [Nord theme][nord]
 
-      | Key Combination  | Action           |
-      |------------------|------------------|
-      | Ctrl-Tab         | Next Tab         |
-      | Ctrl-Shift-Tab   | Previous Tab     |
+        See README in the repository.
 
+- Add shortcut key
 
-    - Install shell integration (> ver3.0)
-
-      `iTerm2 > Install Shell Integration`
-
-    - Create profile for remote host
-
-        - Open profile setting with `iTerm2 > Preference > Profiles`.
-        - Create new profilw by duplicating Default profile with keyboard shortcut `command-=`.
-        - Change profile name to "Remote" in General tab.
-        - Change tab color in Colors tab.
-        - Add rule for automatic profile switching in Advanced tab.
+    | Key Combination  | Action           |
+    |------------------|------------------|
+    | Ctrl-Tab         | Next Tab         |
+    | Ctrl-Shift-Tab   | Previous Tab     |
 
 
-- Install vscode
+- Install shell integration (> ver3.0)
 
-    - Enable builtin `Settings Sync`
+    `iTerm2 > Install Shell Integration`
 
-      Sign in with GitHub account
+- Create profile for remote host
 
-    - Run the `Shell Command: Install 'code' command in PATH`
+    - Open profile setting with `iTerm2 > Preference > Profiles`.
+    - Create new profilw by duplicating Default profile with keyboard shortcut `command-=`.
+    - Change profile name to "Remote" in General tab.
+    - Change tab color in Colors tab.
+    - Add rule for automatic profile switching in Advanced tab.
+
+
+### Install vscode
+
+- Enable builtin `Settings Sync`
+
+    Sign in with GitHub account
+
+- Run the `Shell Command: Install 'code' command in PATH`
 
 
 
