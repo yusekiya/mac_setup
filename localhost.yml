@@ -196,11 +196,19 @@
         dest: "~/.dircolors"
       when: ret_nord_dircolors_clone is changed
 
-    - name: Downlowd .envrc for brewland
+    - name: Downlowd .envrc for brewland | x86_64
       get_url:
         url: "https://gist.githubusercontent.com/yusekiya/c38cb5216084365273af117b99a42472/raw/dfb51ec9b2c4353eb1a81b223122e510f94d53d9/.envrc"
         dest: "{{ lookup('env', 'HOME') }}/.brewland/.envrc"
+      when: "{{ ansible_facts['architecture'] }}" == "x86_64"
 
+    - name: Downlowd .envrc for brewland | arm64
+      get_url:
+        url: "https://gist.githubusercontent.com/yusekiya/dad7f7b67e261ae048344e48a28eb31a/raw/20db49dd1772a84586fd1bc7f79a749b73945dbb/.envrc"
+        dest: "{{ lookup('env', 'HOME') }}/.brewland/.envrc"
+      when: "{{ ansible_facts['architecture'] }}" == "arm64"
+
+        
     - name: Register zsh | x86_64
       become: yes
       lineinfile:
