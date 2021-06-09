@@ -130,7 +130,7 @@
     - name: Install homebrew packages
       homebrew:
         name: "{{ item.name }}"
-        state: "{{ item.state | default('latest') }}"
+        state: "{{ item.state | default('present') }}"
       with_items: "{{ homebrew_packages }}"
       register: ret_homebrew
 
