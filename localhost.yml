@@ -32,9 +32,6 @@
       - { name: docker-compose-completion }
       - { name: direnv }
       - { name: editorconfig }
-      - { name: font-fontawesome }
-      - { name: font-freefont }
-      - { name: font-fira-code }
       - { name: fd }
       - { name: ffmpeg }
       - { name: findutils }
@@ -64,6 +61,11 @@
       - { name: emacs-mac }
       - { name: nodebrew }
       - { name: zsh}
+
+    homebrew_fonts:
+      - { name: font-fontawesome }
+      - { name: font-freefont }
+      - { name: font-fira-code }
 
     basic_dirs:
       - { path: "{{ lookup('env', 'HOME') }}/.nodebrew/src",
@@ -136,6 +138,13 @@
 
     - name: Check updated homebrew package
       set_fact: updated_homebrew_package={{ ret_homebrew.results | selectattr('changed') | map(attribute='item.name') | list }}
+
+    - name: Install fonts
+      homebrew:
+        name: "{{ item.name }}"
+        state: "{{ item.state | default('installed') }}"
+      with_items: "{{ homebrew_fonts }}"
+      ignore_errors: yes
 
     - name: Install dotfiles
       git:
