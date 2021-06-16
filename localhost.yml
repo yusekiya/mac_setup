@@ -2,6 +2,8 @@
   connection: local
   gather_facts: yes
   vars:
+    brew_exe_path: "{% if ansible_facts['architecture'] == 'arm64' %}/opt/homebrew/bin{% else %}/usr/local/bin{% endif %}"
+
     dotfiles:
       src:
         repository: "https://github.com/yusekiya/dotfiles.git"
@@ -122,16 +124,19 @@
 
     - name: Add repositories for homebrew
       homebrew_tap:
+        path: "{{ brew_exe_path }}"
         tap: "{{ item }}"
         state: present
       with_items: "{{ homebrew_taps }}"
 
     - name: Update homebrew
       homebrew:
+        path: "{{ brew_exe_path }}"
         update_homebrew: yes
 
     - name: Install homebrew packages
       homebrew:
+        path: "{{ brew_exe_path }}"
         name: "{{ item.name }}"
         state: "{{ item.state | default('present') }}"
       with_items: "{{ homebrew_packages }}"
@@ -142,6 +147,7 @@
 
     - name: Install fonts
       homebrew:
+        path: "{{ brew_exe_path }}"
         name: "{{ item.name }}"
         state: "{{ item.state | default('installed') }}"
       with_items: "{{ homebrew_fonts }}"
