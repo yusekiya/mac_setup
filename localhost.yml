@@ -42,6 +42,7 @@
       - { name: gitup}
       - { name: gnutls }
       - { name: gnu-sed }
+      - { name: go-task/tap/go-task }
       - { name: imagemagick }
       - { name: nkf }
       - { name: librsvg }
