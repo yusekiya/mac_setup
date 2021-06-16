@@ -230,6 +230,7 @@
       lineinfile:
         dest: /etc/shells
         insertafter: EOF
+        search_string: '/usr/local/bin/zsh'
         line: /usr/local/bin/zsh
         state: present
       when: ansible_facts['architecture'] == "x86_64"
@@ -239,6 +240,7 @@
       lineinfile:
         dest: /etc/shells
         insertafter: EOF
+        search_string: '/opt/homebrew/bin/zsh'
         line: /opt/homebrew/bin/zsh
         state: present
       when: ansible_facts['architecture'] == "arm64"
