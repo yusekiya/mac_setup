@@ -15,25 +15,25 @@
       - railwaycat/emacsmacport
 
     homebrew_packages:
-      - { name: ansible }
       - { name: ag }
+      - { name: ansible }
       - { name: aspell }
       - { name: autoconf }
       - { name: automake }
-      - { name: xz }
-      - { name: binutils }
-      - { name: bash}
       - { name: bash-completion2 }
+      - { name: bash}
+      - { name: binutils }
       - { name: cmake }
       - { name: colordiff }
       - { name: coreutils }
       - { name: cppformat }
       - { name: ctags }
       - { name: direnv }
+      - { name: direnv }
       - { name: docker-completion }
       - { name: docker-compose-completion }
-      - { name: direnv }
       - { name: editorconfig }
+      - { name: emacs-mac }
       - { name: fd }
       - { name: ffmpeg }
       - { name: findutils }
@@ -42,33 +42,33 @@
       - { name: ghostscript }
       - { name: git }
       - { name: gitup}
-      - { name: gnutls }
       - { name: gnu-sed }
+      - { name: gnutls }
       - { name: go-task/tap/go-task }
       - { name: imagemagick }
-      - { name: nkf }
       - { name: librsvg }
       - { name: llvm }
       - { name: lua }
+      - { name: nkf }
+      - { name: nodebrew }
       - { name: pandoc }
       - { name: peco }
       - { name: pstoedit }
-      - { name: rsync }
       - { name: ripgrep }
+      - { name: rsync }
       - { name: ssh-copy-id }
       - { name: tig }
       - { name: tldr }
       - { name: tmux }
       - { name: tree }
       - { name: vim }
-      - { name: emacs-mac }
-      - { name: nodebrew }
+      - { name: xz }
       - { name: zsh}
 
     homebrew_fonts:
+      - { name: font-fira-code }
       - { name: font-fontawesome }
       - { name: font-freefont }
-      - { name: font-fira-code }
 
     basic_dirs:
       - { path: "{{ lookup('env', 'HOME') }}/.nodebrew/src",
