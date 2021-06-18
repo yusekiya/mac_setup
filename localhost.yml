@@ -146,12 +146,11 @@
       set_fact: updated_homebrew_package={{ ret_homebrew.results | selectattr('changed') | map(attribute='item.name') | list }}
 
     - name: Install fonts
-      homebrew:
+      community.general.homebrew_cask:
         path: "{{ brew_exe_path }}"
         name: "{{ item.name }}"
         state: "{{ item.state | default('installed') }}"
       with_items: "{{ homebrew_fonts }}"
-      ignore_errors: yes
 
     - name: Install dotfiles
       git:
