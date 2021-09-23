@@ -31,8 +31,6 @@
       - { name: ctags }
       - { name: direnv }
       - { name: direnv }
-      - { name: docker-completion }
-      - { name: docker-compose-completion }
       - { name: editorconfig }
       - { name: emacs-mac }
       - { name: fd }
