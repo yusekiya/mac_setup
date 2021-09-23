@@ -31,6 +31,8 @@
       - { name: ctags }
       - { name: direnv }
       - { name: direnv }
+      - { name: docker }
+      - { name: docker-compose }
       - { name: editorconfig }
       - { name: emacs-mac }
       - { name: fd }
@@ -46,6 +48,7 @@
       - { name: go-task/tap/go-task }
       - { name: imagemagick }
       - { name: librsvg }
+      - { name: lima }
       - { name: llvm }
       - { name: lua }
       - { name: nkf }
