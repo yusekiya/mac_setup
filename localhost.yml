@@ -215,7 +215,7 @@
 
     - name: Downlowd .envrc for brewland | x86_64
       get_url:
-        url: "https://gist.githubusercontent.com/yusekiya/c38cb5216084365273af117b99a42472/raw/dfb51ec9b2c4353eb1a81b223122e510f94d53d9/.envrc"
+        url: "https://gist.githubusercontent.com/yusekiya/c38cb5216084365273af117b99a42472/raw/aa217968d4220919cf445d945dccef1dbdb3523e/.envrc"
         dest: "{{ lookup('env', 'HOME') }}/.brewland/.envrc"
       when: ansible_facts['architecture'] == "x86_64"
 
