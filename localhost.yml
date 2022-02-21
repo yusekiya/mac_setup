@@ -30,7 +30,6 @@
       - { name: cppformat }
       - { name: ctags }
       - { name: direnv }
-      - { name: direnv }
       - { name: docker }
       - { name: docker-compose }
       - { name: editorconfig }
