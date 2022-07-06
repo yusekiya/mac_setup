@@ -24,6 +24,7 @@
       - { name: bash}
       - { name: binutils }
       - { name: cmake }
+      - { name: colima }
       - { name: colordiff }
       - { name: cookiecutter }
       - { name: coreutils }
