@@ -98,18 +98,9 @@
       - { name: tpm,
           repo: "https://github.com/tmux-plugins/tpm.git",
           dest: "~/.tmux/plugins/tpm" }
-      - { name: solarized,
-          repo: "https://github.com/altercation/solarized.git",
-          dest: "~/repos/solarized" }
       - { name: nord-iterm2,
           repo: "https://github.com/arcticicestudio/nord-iterm2.git",
           dest: "~/repos/nord_iterm2" }
-      - { name: dircolors-solarized,
-          repo: "https://github.com/seebi/dircolors-solarized.git",
-          dest: "~/repos/dircolors-solarized" }
-      # - { name: enhancd,
-          # repo: "https://github.com/b4b4r07/enhancd.git",
-          # dest: "~/repos/enhancd" }
 
   tasks:
 
