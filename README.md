@@ -64,6 +64,23 @@ $ chsh -s /opt/homebrew/bin/zsh
 $ $(brew --prefix)/opt/fzf/install --key-bindings --completion --no-update-rc
 ```
 
+### Set up package manager for zsh
+
+Install sheldon with `cargo`:
+
+1. Install Rust
+2. `cargo install sheldon`
+
+### Set up zoxide
+
+Edit `~/.zsh.site/defer-after-compinit.zsh` as follows:
+
+```shell
+if (( $+commands[zoxide] )); then
+    eval "$(zoxide init --cmd c zsh)"
+fi
+```
+
 ### Set up iTerm2
 
 - Apply iTerm2 theme
