@@ -58,13 +58,13 @@ $ chsh -s /usr/local/bin/zsh
 $ chsh -s /opt/homebrew/bin/zsh
 ```
 
-### Setup fzf
+### Set up fzf
 
 ```shell
 $ $(brew --prefix)/opt/fzf/install --key-bindings --completion --no-update-rc
 ```
 
-### Setup iTerm2
+### Set up iTerm2
 
 - Apply iTerm2 theme
 
