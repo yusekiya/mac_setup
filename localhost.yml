@@ -65,6 +65,7 @@
       - { name: tree }
       - { name: vim }
       - { name: xz }
+      - { name: zoxide}
       - { name: zsh}
 
     homebrew_fonts:
