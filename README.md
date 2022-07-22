@@ -38,7 +38,7 @@ $ xcode-select --install
    $ brew install ansible
    ```
 
-2. Clone repository to setup Mac with ansible
+2. Clone repository and set up Mac with ansible
 
    ``` bash
    $ git clone https://github.com/yusekiya/mac_setup.git ~/.provisioning
@@ -47,9 +47,9 @@ $ xcode-select --install
    ```
 
 
-## Manual additional settings
+## Optional settings
 
-### (Optional) Change login shell
+### Change login shell
 
 ```shell
 ## x86_64
@@ -61,19 +61,19 @@ $ chsh -s /opt/homebrew/bin/zsh
 ### Set up fzf
 
 ```shell
-$ $(brew --prefix)/opt/fzf/install --key-bindings --completion --no-update-rc
+$ $(brew --prefix fzf)/install --key-bindings --completion --no-update-rc
 ```
 
 ### Set up package manager for zsh
 
 Install sheldon with `cargo`:
 
-1. Install Rust
+1. Install [Rust][rust]
 2. `cargo install sheldon`
 
 ### Set up zoxide
 
-Edit `~/.zsh.site/defer-after-compinit.zsh` as follows:
+Add the following lines to `~/.zsh.site/defer-after-compinit.zsh`
 
 ```shell
 if (( $+commands[zoxide] )); then
@@ -122,3 +122,4 @@ fi
 
 [homebrew]: http://brew.sh/
 [nord]: https://github.com/arcticicestudio/nord-iterm2
+[rust]: https://www.rust-lang.org/tools/install
