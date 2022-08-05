@@ -8,7 +8,7 @@
       src:
         repository: "https://github.com/yusekiya/dotfiles.git"
       dest: "~/dotfiles"
-      symlink_script: "sh setup.sh -f"
+      symlink_script: "bash setup.sh -f -e .pkgbuild,.minttyrc"
 
     homebrew_taps:
       - homebrew/cask-fonts
