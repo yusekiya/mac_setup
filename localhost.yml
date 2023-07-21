@@ -28,7 +28,6 @@
       - { name: colordiff }
       - { name: cookiecutter }
       - { name: coreutils }
-      - { name: cppformat }
       - { name: ctags }
       - { name: direnv }
       - { name: docker }
