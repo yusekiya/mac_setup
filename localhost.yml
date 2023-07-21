@@ -20,7 +20,7 @@
       - { name: aspell }
       - { name: autoconf }
       - { name: automake }
-      - { name: bash-completion2 }
+      - { name: bash-completion@2 }
       - { name: bash}
       - { name: binutils }
       - { name: cmake }
