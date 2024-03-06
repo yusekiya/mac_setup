@@ -54,10 +54,7 @@ $ xcode-select --install
 ### Change login shell
 
 ```shell
-## x86_64
-$ chsh -s /usr/local/bin/zsh
-## arm64
-$ chsh -s /opt/homebrew/bin/zsh
+$ chsh -s $(brew --prefix)/bin/zsh
 ```
 
 ### Set up fzf
