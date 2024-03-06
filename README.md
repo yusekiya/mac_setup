@@ -27,6 +27,8 @@ $ xcode-select --install
 2. Check any issues with the install
 
    ``` bash
+   ## Modify PATH according to CPU architecture of your Mac
+   $ export PATH="/opt/homebrew/bin:$PATH"
    $ brew doctor
    ```
 
