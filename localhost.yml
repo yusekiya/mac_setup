@@ -44,7 +44,6 @@
       - { name: gitup}
       - { name: gnu-sed }
       - { name: gnutls }
-      - { name: go-task/tap/go-task }
       - { name: imagemagick }
       - { name: librsvg }
       - { name: lima }
