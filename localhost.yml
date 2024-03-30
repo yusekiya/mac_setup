@@ -50,7 +50,6 @@
       - { name: llvm }
       - { name: lua }
       - { name: nkf }
-      - { name: nodebrew }
       - { name: pandoc }
       - { name: peco }
       - { name: pstoedit }
@@ -72,8 +71,6 @@
       - { name: font-freefont }
 
     basic_dirs:
-      - { path: "{{ lookup('env', 'HOME') }}/.nodebrew/src",
-          state: directory }
       - { path: "{{ lookup('env', 'HOME') }}/.brewland",
           state: directory }
       - { path: "{{ lookup('env', 'HOME') }}/scratch",
@@ -86,20 +83,17 @@
           state: directory }
       - { path: "{{ lookup('env', 'HOME') }}/.local/lib",
           state: directory }
-      - { path: "{{ lookup('env', 'HOME') }}/.local/lib/python3/site-packages",
-          state: directory }
       - { path: "{{ lookup('env', 'HOME') }}/.local/share",
           state: directory }
       - { path: "{{ lookup('env', 'HOME') }}/.local/src",
           state: directory }
 
     git_repos:
-      - { name: tpm,
+      - {
+          name: tpm,
           repo: "https://github.com/tmux-plugins/tpm.git",
-          dest: "~/.tmux/plugins/tpm" }
-      - { name: nord-iterm2,
-          repo: "https://github.com/arcticicestudio/nord-iterm2.git",
-          dest: "~/repos/nord_iterm2" }
+          dest: "~/.tmux/plugins/tpm"
+        }
 
   tasks:
 
@@ -115,22 +109,23 @@
       with_items: "{{ basic_dirs }}"
 
     - name: Add repositories for homebrew
-      homebrew_tap:
+      community.general.homebrew_tap:
         path: "{{ brew_exe_path }}"
         tap: "{{ item }}"
         state: present
       with_items: "{{ homebrew_taps }}"
 
     - name: Update homebrew
-      homebrew:
+      community.general.homebrew:
         path: "{{ brew_exe_path }}"
         update_homebrew: yes
 
     - name: Install homebrew packages
-      homebrew:
+      community.general.homebrew:
         path: "{{ brew_exe_path }}"
         name: "{{ item.name }}"
         state: "{{ item.state | default('present') }}"
+      ignore_errors: true
       with_items: "{{ homebrew_packages }}"
       register: ret_homebrew
 
@@ -161,7 +156,7 @@
     - name: Install my toolbox | Clone
       git:
         repo: "https://github.com/yusekiya/toolbox.git"
-        dest: "~/repos/toolbox"
+        dest: "~/github/toolbox"
       register: ret_toolbox
 
     - stat:
@@ -180,7 +175,7 @@
         src: "{{ item }}"
         dest: "~/.local/bin/{{ item | basename }}"
       with_fileglob:
-        - "~/repos/toolbox/*"
+        - "~/github/toolbox/*"
       when: ret_toolbox is changed
 
     - name: Clone git repositories
@@ -192,14 +187,14 @@
 
     - name: Install Nord dircolors | git clone repo
       git:
-        repo: "https://github.com/arcticicestudio/nord-dircolors.git"
-        dest: "~/repos/nord-dircolors"
+        repo: "https://github.com/nordtheme/dircolors.git"
+        dest: "~/github/nord-dircolors"
       register: ret_nord_dircolors_clone
 
     - name: Install Nord dircolors | make symlink
       file:
         state: link
-        src: "~/repos/nord-dircolors/src/dir_colors"
+        src: "~/github/nord-dircolors/src/dir_colors"
         dest: "~/.dircolors"
       when: ret_nord_dircolors_clone is changed
 
