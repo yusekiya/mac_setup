@@ -67,6 +67,7 @@
 
     homebrew_fonts:
       - { name: font-fira-code }
+      - { name: font-fira-code-nerd-font }
       - { name: font-fontawesome }
       - { name: font-freefont }
 
