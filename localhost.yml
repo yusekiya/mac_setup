@@ -49,6 +49,7 @@
       - { name: lima }
       - { name: llvm }
       - { name: lua }
+      - { name: neovim }
       - { name: nkf }
       - { name: pandoc }
       - { name: peco }
