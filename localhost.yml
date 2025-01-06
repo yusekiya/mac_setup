@@ -21,7 +21,7 @@
       - { name: autoconf }
       - { name: automake }
       - { name: bash-completion@2 }
-      - { name: bash}
+      - { name: bash }
       - { name: binutils }
       - { name: cmake }
       - { name: colima }
@@ -38,14 +38,15 @@
       - { name: ffmpeg }
       - { name: findutils }
       - { name: fzf }
-      - { name: gawk}
+      - { name: gawk }
       - { name: ghostscript }
       - { name: git }
-      - { name: gitup}
+      - { name: gitup }
       - { name: gnu-sed }
       - { name: gnutls }
       - { name: imagemagick }
       - { name: librsvg }
+      - { name: lazygit }
       - { name: lima }
       - { name: llvm }
       - { name: lua }
@@ -64,8 +65,8 @@
       - { name: tree }
       - { name: vim }
       - { name: xz }
-      - { name: zoxide}
-      - { name: zsh}
+      - { name: zoxide }
+      - { name: zsh }
 
     homebrew_fonts:
       - { name: font-fira-code }
@@ -74,32 +75,23 @@
       - { name: font-freefont }
 
     basic_dirs:
-      - { path: "{{ lookup('env', 'HOME') }}/.brewland",
-          state: directory }
-      - { path: "{{ lookup('env', 'HOME') }}/scratch",
-          state: directory }
-      - { path: "{{ lookup('env', 'HOME') }}/Study",
-          state: directory }
-      - { path: "{{ lookup('env', 'HOME') }}/.local/bin",
-          state: directory }
-      - { path: "{{ lookup('env', 'HOME') }}/.local/include",
-          state: directory }
-      - { path: "{{ lookup('env', 'HOME') }}/.local/lib",
-          state: directory }
-      - { path: "{{ lookup('env', 'HOME') }}/.local/share",
-          state: directory }
-      - { path: "{{ lookup('env', 'HOME') }}/.local/src",
-          state: directory }
+      - { path: "{{ lookup('env', 'HOME') }}/.brewland", state: directory }
+      - { path: "{{ lookup('env', 'HOME') }}/scratch", state: directory }
+      - { path: "{{ lookup('env', 'HOME') }}/Study", state: directory }
+      - { path: "{{ lookup('env', 'HOME') }}/.local/bin", state: directory }
+      - { path: "{{ lookup('env', 'HOME') }}/.local/include", state: directory }
+      - { path: "{{ lookup('env', 'HOME') }}/.local/lib", state: directory }
+      - { path: "{{ lookup('env', 'HOME') }}/.local/share", state: directory }
+      - { path: "{{ lookup('env', 'HOME') }}/.local/src", state: directory }
 
     git_repos:
       - {
           name: tpm,
           repo: "https://github.com/tmux-plugins/tpm.git",
-          dest: "~/.tmux/plugins/tpm"
+          dest: "~/.tmux/plugins/tpm",
         }
 
   tasks:
-
     - name: Verify password
       become: yes
       command: echo "sudo password verified"
@@ -213,13 +205,12 @@
         dest: "{{ lookup('env', 'HOME') }}/.brewland/.envrc"
       when: ansible_facts['architecture'] == "arm64"
 
-        
     - name: Register zsh | x86_64
       become: yes
       lineinfile:
         dest: /etc/shells
         insertafter: EOF
-        search_string: '/usr/local/bin/zsh'
+        search_string: "/usr/local/bin/zsh"
         line: /usr/local/bin/zsh
         state: present
       when: ansible_facts['architecture'] == "x86_64"
@@ -229,8 +220,7 @@
       lineinfile:
         dest: /etc/shells
         insertafter: EOF
-        search_string: '/opt/homebrew/bin/zsh'
+        search_string: "/opt/homebrew/bin/zsh"
         line: /opt/homebrew/bin/zsh
         state: present
       when: ansible_facts['architecture'] == "arm64"
-
