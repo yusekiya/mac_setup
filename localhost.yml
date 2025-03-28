@@ -44,6 +44,7 @@
       - { name: gitup }
       - { name: gnu-sed }
       - { name: gnutls }
+      - { name: gpg }
       - { name: imagemagick }
       - { name: librsvg }
       - { name: lazygit }
@@ -53,6 +54,7 @@
       - { name: neovim }
       - { name: nkf }
       - { name: pandoc }
+      - { name: pass }
       - { name: peco }
       - { name: pstoedit }
       - { name: ripgrep }
