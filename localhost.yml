@@ -56,6 +56,7 @@
       - { name: pandoc }
       - { name: pass }
       - { name: peco }
+      - { name: pinentry-mac }
       - { name: pstoedit }
       - { name: ripgrep }
       - { name: rsync }
