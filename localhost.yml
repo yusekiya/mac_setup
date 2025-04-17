@@ -72,6 +72,7 @@
       - { name: font-fira-code }
       - { name: font-fira-code-nerd-font }
       - { name: font-cica }
+      - { name: font-hackgen }
       - { name: font-fontawesome }
       - { name: font-freefont }
 
