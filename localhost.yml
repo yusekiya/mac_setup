@@ -63,6 +63,7 @@
       - { name: tldr }
       - { name: tmux }
       - { name: tree }
+      - { name: tree-sitter }
       - { name: vim }
       - { name: xz }
       - { name: zoxide }
