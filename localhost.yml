@@ -38,6 +38,7 @@
       - { name: findutils }
       - { name: fzf }
       - { name: gawk }
+      - { name: gh }
       - { name: ghostscript }
       - { name: git }
       - { name: gitup }
