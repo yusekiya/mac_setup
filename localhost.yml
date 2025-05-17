@@ -59,7 +59,6 @@
       - { name: ssh-copy-id }
       - { name: starship }
       - { name: tig }
-      - { name: tldr }
       - { name: tmux }
       - { name: tree }
       - { name: tree-sitter }
