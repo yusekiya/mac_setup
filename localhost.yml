@@ -63,6 +63,7 @@
       - { name: tmux }
       - { name: tree }
       - { name: tree-sitter }
+      - { name: tree-sitter-cli }
       - { name: vim }
       - { name: xz }
       - { name: zoxide }
