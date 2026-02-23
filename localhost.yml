@@ -59,6 +59,7 @@
       - { name: rsync }
       - { name: ssh-copy-id }
       - { name: starship }
+      - { name: stylua }
       - { name: tig }
       - { name: tmux }
       - { name: tree }
