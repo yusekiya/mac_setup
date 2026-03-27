@@ -66,6 +66,7 @@
       - { name: tree-sitter }
       - { name: tree-sitter-cli }
       - { name: vim }
+      - { name: watch }
       - { name: xz }
       - { name: zoxide }
       - { name: zsh }
